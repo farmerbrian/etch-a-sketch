@@ -30,8 +30,16 @@ function drawGrid(rows,columns) {
                     changeColor = document.getElementById(`${squareSelection}`);
                     changeColor.className = 'grid-item item-color';
                 })
-                item.addEventListener('hover', () => {
-                    
+                
+                item.addEventListener('mouseenter', () => {
+                    hover = (item.id);
+                    showHover = document.getElementById(`${hover}`).classList.add('hover-color');
+                    //showHover.className = 'grid-item hover-color';
+                })
+                item.addEventListener('mouseleave', () => {
+                    hover = (item.id);
+                    showHover = document.getElementById(`${hover}`).classList.remove('hover-color');
+                    //showHover.className = 'grid-item';
                 })
             }) 
     };
